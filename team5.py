@@ -4,6 +4,7 @@
 #     strategy_name: a string
 #     strategy_description: a string
 #     move: A function that returns 'c' or 'b'
+# This is a change
 ####
 
 team_name = 'Team 5' # Only 10 chars displayed.
