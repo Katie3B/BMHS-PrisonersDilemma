@@ -4,11 +4,12 @@
 #     strategy_name: a string
 #     strategy_description: a string
 #     move: A function that returns 'c' or 'b'
+# This is a change
 ####
 
-team_name = 'Team 5' # Only 10 chars displayed.
-strategy_name = 'The name the team gives to this strategy'
-strategy_description = 'How does this strategy decide?'
+team_name = 'Dumaflache' # Only 10 chars displayed.
+strategy_name = 'Rush B. Dont stop, ill flash my friends, dont stop my friends terrorists rush b, ct buy a defuser or youre a loser'
+strategy_description = 'the russian dude thats bottom fragging calls it out'
     
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
