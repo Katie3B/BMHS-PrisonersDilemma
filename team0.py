@@ -6,9 +6,9 @@
 #     move: A function that returns 'c' or 'b'
 ####
 
-team_name = 'The name the team gives to itself' # Only 10 chars displayed.
-strategy_name = 'The name the team gives to this strategy'
-strategy_description = 'How does this strategy decide?'
+team_name = 'ugh' # Only 10 chars displayed.
+strategy_name = 'Good for a while.'
+strategy_description = 'Collude until turn 100, unless betrayed.'
     
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
@@ -26,19 +26,11 @@ def move(my_history, their_history, my_score, their_score):
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
     if their_history == '':
-            return 'b'
+            return 'c'
     theirs = []                                 # empty list to turn string their_history into list
     mine = []                                   # empty list to turn string my_history into a list
-    theirscopy = []                             # a list that is a copy of the theirs list
     for value in their_history:                # for each value in original string their_history
-        theirs.append(value)                    # add each character in their_history string to theirs list
-        theirscopy.append(value)                # add each character in their_history string to theirs list  
-    del theirscopy[0]
-    for value in theirs:
-        if theirs.index(value) == theirscopy.index(value):
-            theirscopy[value] = 1
-        else:
-            theirscopy[value] = 0    
+        theirs.append(value)                    # add each character in their_history string to theirs list 
     for value in my_history:                   # for each value in original my_history string
         mine.append(value)                      # add each character in my_history string to mine list
     betrayenemy = 0                             # define betrayenemy as a variable to keep track of enemy betrayals
@@ -61,12 +53,15 @@ def move(my_history, their_history, my_score, their_score):
             colludeme += 1                       # add 1 to collude me
     if justbetray == True:                      # if justbetray is now True
         return 'b'                               # return 'b' as a move
-    elif theirs[len(theirs) - 1] == 'b':        # else if the latest index of theirs is 'b'
+    elif theirs[-1] == 'b':                     # else if the latest index of theirs is 'b'
         return 'b'                              # return 'b'
-    elif betrayenemy == 0 and len(theirs) != 3:    # else if they have never betrayed and if it is not the third round
+    elif betrayme >= 1:
+        return 'b'
+    elif betrayenemy == 0 and len(theirs) != 100:    # else if they have never betrayed and if it is not the 25th round
         return 'c'                                  # return 'c' as move
+    else:
+        return 'b'
 
-     
             
         
             
