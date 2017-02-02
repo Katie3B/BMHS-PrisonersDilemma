@@ -6,8 +6,6 @@
 #     move: A function that returns 'c' or 'b'
 # This is a change
 ####
-
-<<<<<<< HEAD
 import random
 
 print ("Starting...")
@@ -18,11 +16,6 @@ strategy_description = 'How does this strategy decide?'
 
 #Constants
 start = "c"
-=======
-team_name = 'Dumaflache' # Only 10 chars displayed.
-strategy_name = 'Rush B. Dont stop, ill flash my friends, dont stop my friends terrorists rush b, ct buy a defuser or youre a loser'
-strategy_description = 'the russian dude thats bottom fragging calls it out'
->>>>>>> origin/master
     
 iterationAlwaysCollude = 0
 weightAlwaysCollude = 0
@@ -107,29 +100,15 @@ def move(my_history, their_history, my_score, their_score):
         if( weightBettrayAfter > 2):
             return "b"
         else:
-<<<<<<< HEAD
-            if( pick < weightAlternate ):
-                return "c"
-            elif( pick < weightAlwaysCollude ):
-                return "c"
-            elif( pick < weightAlwaysBetray ):
-=======
             if( weightAlternate > weightAlwaysCollude and weightAlternate > weightAlwaysBetray and weightAlternate >= weightOpposite ):
                 return "c"
             elif( weightAlwaysCollude > weightAlwaysBetray and weightAlwaysCollude > weightOpposite):
                 return "c"
             elif( weightAlwaysBetray > weightOpposite):
->>>>>>> origin/master
                 return "b"
-            elif( pick < weightOpposite ):
-                return opposite(myLast)
             else:
-<<<<<<< HEAD
-                return theirLast
-=======
                 return opposite(myLast)
             return theirLast
->>>>>>> origin/master
         
     else:
         #Reset Variables
@@ -150,15 +129,3 @@ def move(my_history, their_history, my_score, their_score):
         weightBettrayAfter = 0
         
         return "c"
-    
-
-myHistory = "cccccccc"
-theirHistroy = "bcccbccc"
-
-sendMy = ""
-sendTheir = ""
-
-for i in range(0, 7):
-    sendMy += myHistory[i]
-    sendTheir += theirHistroy[i]
-    move(sendMy, sendTheir, 0, 0)
