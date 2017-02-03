@@ -11,10 +11,10 @@ import random
 print ("Starting...")
 
 team_name = 'Team 5 Ben & Dylan' # Only 10 chars displayed.
-strategy_name = 'Our Strategy'
-strategy_description = 'How does this strategy decide?'
+strategy_name = 'Prediction'
+strategy_description = 'Guesses the opponents strategy by weighting patterns!'
 
-#Constants
+#Variables
 start = "c"
     
 iterationAlwaysCollude = 0
@@ -49,6 +49,8 @@ def move(my_history, their_history, my_score, their_score):
     
     iterations = len(their_history)
     
+    global start
+    
     global iterationAlwaysCollude
     global weightAlwaysCollude
     
@@ -66,6 +68,7 @@ def move(my_history, their_history, my_score, their_score):
     global weightBettrayAfter
     
     if(their_history != ""):
+        
         # Opposite
         if(theirLast == opposite(myLast)):
             iterationOpposite += 1.0
@@ -128,4 +131,4 @@ def move(my_history, their_history, my_score, their_score):
         iterationBetrayAfterStart = 0
         weightBettrayAfter = 0
         
-        return "c"
+        return start
