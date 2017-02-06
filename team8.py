@@ -18,21 +18,7 @@ def move(my_history, their_history, my_score, their_score):
     Make my move.
     Returns 'c' or 'b'. 
     '''
-    '''Count points here'''
-    if my_history == 'c' and their_history == 'c':
-        my_score += 650
-        
-    if their_history == 'b' and my_history == 'b':
-        my_score -= 250
-        
-    if my_history == 'b' and their_history == 'c':
-        my_score += 100
-        
-    if my_history == 'c' and their_history == 'b':
-        my_score -= 500
-        
-    '''Stop counting points here'''
-    
+   
     '''first five rounds'''
     if my_history == '': # This block will add variables and initialize their values for the first turn
         number_of_turns = 0
